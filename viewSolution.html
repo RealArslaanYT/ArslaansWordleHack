@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arslaan's Wordle Hack | View Solution</title>
+    <script>
+        function homeRedirect() {
+            window.location = "/"
+        }
+    </script>
+</head>
+<body>
+    <h1>Arslaan's Wordle Hack | View Solution</h1>
+    {% if solution %}
+        <div style="white-space: pre-line;">The Wordle solution for {{ date }} is: {{ solution }}</div>
+    {% endif %}
+    {% if error %}
+        <div style="white-space: pre-line; color: red;">{{ error }}</div>
+    {% endif %}
+    <div class="footer" style="position: absolute; bottom: 10px; left: 10px; z-index: 10px;">
+        <button onclick="homeRedirect();" style="width: 10vw; height: 7vh;">Back to Home</button>
+    </div>
+</body>
+</html>
