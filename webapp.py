@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from dateutil.parser import parse as parse_date
 import requests
 
 app = Flask(__name__)
@@ -34,6 +35,7 @@ def home():
 
 @app.route("/solution/<date>")
 def view_solution(date):
+    date = parse_date(date).strftime("%Y-%m-%d")
     solution, error = get_wordle_solution(date)
     if solution is not None:
         return render_template("viewSolution.html", solution=solution, date=date)
