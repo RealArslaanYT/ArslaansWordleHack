@@ -40,5 +40,5 @@ def view_solution(date):
     else:
         return render_template("viewSolution.html", error=error)
 
-
-app.run('0.0.0.0', 80)
+if __name__ == "__main__":
+    app.run('0.0.0.0', 80)
